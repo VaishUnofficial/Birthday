@@ -19,11 +19,11 @@
 </head>
 
 <body>
-    <audio id="birthday-audio" autoplay muted>
-    <source src="audioclip1.mp3" type="audio/mp3">
-    
-</audio>
 
+    <audio id="birthday-audio" autoplay muted loop>
+        <source src="finalaudio.mp3" type="audio/mp3">
+    </audio>
+    
     <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
@@ -168,14 +168,13 @@
 
 </body>
 <script>
-    window.onload = function() {
-        // Add event listener for user interaction to unmute and play audio
-        document.body.addEventListener('click', function() {
+     // When the page loads, unmute and start playing the audio
+        window.onload = function() {
             var audio = document.getElementById('birthday-audio');
-            audio.muted = false;  // Unmute audio on user click
-            audio.play();         // Play audio
-        });
-    };
+            audio.muted = false;  // Unmute the audio after page load
+            audio.play();         // Play the audio
+        };
+
     let datetxt = "02 July";
     let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
     let titleLetter = "To you";
