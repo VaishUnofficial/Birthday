@@ -168,12 +168,16 @@
 
 </body>
 <script>
-     // When the page loads, unmute and start playing the audio
-        window.onload = function() {
-            var audio = document.getElementById('birthday-audio');
-            audio.muted = false;  // Unmute the audio after page load
-            audio.play();         // Play the audio
-        };
+     window.onload = function() {
+        var audio = document.getElementById('birthday-audio');
+        audio.muted = false;  // Unmute the audio after page load
+        
+        // Try playing the audio, but catch and ignore errors if autoplay is blocked
+        audio.play().catch(function(error) {
+            console.log("Autoplay blocked or failed. Error:", error);  // Log the error (but don't show in UI)
+            // No need to show any alert or break user experience
+        });
+    };
 
     let datetxt = "02 July";
     let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
